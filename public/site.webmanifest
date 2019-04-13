@@ -1,8 +1,7 @@
 {
-    "name": "Baba is Website",
-    "short_name": "Baba is Website",
-    "icons": [
-        {
+    "name": "Baba is...",
+    "short_name": "Baba is...",
+    "icons": [{
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
