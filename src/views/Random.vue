@@ -1,13 +1,13 @@
 <template>
   <main>
-    <h1>
+    <!--<h1>
       <span class="text-primary">Baba</span> is
       <span class="text-spectrum">Random</span>
     </h1>
     <div class="baba-content">
       <img alt="Baba" src="@/assets/Baba.png" />
       <h1>{{ babaList }}</h1>
-    </div>
+    </div>-->
   </main>
 </template>
 
@@ -19,8 +19,13 @@ export default {
       babaList: babaFileList
     };
   },
-  mounted() {
+  beforeCreate() {
+    // stop it
+    // eslint-disable-next-line no-console
     //console.log("data", babaFileList);
+    const randomBaba =
+      babaFileList[Math.floor(Math.random() * babaFileList.length)];
+    this.$router.push(randomBaba);
   }
 };
 </script>

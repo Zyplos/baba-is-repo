@@ -6,7 +6,7 @@
     </h1>
     <div class="baba-content">
       <img alt="Baba" src="@/assets/404.png" />
-      <a href="/">Baba is Home</a>
+      <router-link to="/">Baba is Home</router-link>
     </div>
   </main>
 </template>
