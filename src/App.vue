@@ -9,7 +9,9 @@
     </div>
     <nav :class="{ 'display-none': navbarToggle }">
       <a href="#" @click.prevent="toggleMenu()" id="baba-close">Close</a>
-      <p>{{ discovered.length }} of {{ babaMax }} discovered</p>
+      <p :class="{ 'text-gold': discoveredAll }">
+        {{ discovered.length }} of {{ babaMax }} discovered
+      </p>
       <ul>
         <router-link
           v-for="(discoveredBaba, index) in discovered"
@@ -40,6 +42,11 @@ export default {
     },
     toggleMenu() {
       this.navbarToggle = !this.navbarToggle;
+    }
+  },
+  computed: {
+    discoveredAll() {
+      return this.discovered.length == this.babaMax;
     }
   },
   created() {
@@ -103,12 +110,16 @@ main {
 .display-none {
   display: none;
 }
+.text-gold {
+  color: $buggy;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   color: #fff;
 }
 h1 {
