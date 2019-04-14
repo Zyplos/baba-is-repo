@@ -62,6 +62,7 @@ export default {
   watch: {
     $route(to) {
       const name = to.path.substring(1, to.path.length).toLowerCase();
+      if (!name) return;
       const discoveredData = this.discovered;
       if (!discoveredData.includes(name)) {
         discoveredData.push(name);
